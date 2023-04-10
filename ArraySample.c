@@ -2,22 +2,23 @@
 #include <stdlib.h>
 #define MAX 50
 
-void sentenceReading(char sentence[MAX]);
-int arrayLenght(char sentence[MAX]);
+void sentenceReading(char* sentence);
+int arrayLenght(char* sentence);
 
 int main()
 {
     int lenght;
-    char sentence[MAX];
-    printf("%s","Lutfen bir cumle giriniz: ");
+    char* sentence = (char*)malloc(MAX * sizeof(char));
+    printf("%s","Please enter a sentence: ");
     sentenceReading(sentence);
     lenght = arrayLenght(sentence);
-    printf("\nDizinini Boyu: %d",lenght);
+    printf("\nLenght of Array: %d",lenght);
+    free(sentence);
 
     return 0;
 }
 
-void sentenceReading(char sentence[MAX])
+void sentenceReading(char *sentence)
 {
     int i = 0;
     scanf("%c",&sentence[i]);
@@ -34,7 +35,7 @@ void sentenceReading(char sentence[MAX])
     }
 }
 
-int arrayLenght(char sentence[MAX])
+int arrayLenght(char* sentence)
 {
     int i;
     for(i = 0; sentence[i] != '\0'; i++);
