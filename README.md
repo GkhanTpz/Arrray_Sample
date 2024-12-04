@@ -1,5 +1,3 @@
----
-
 ### **Sentence Length Calculator**
 
 This C program calculates the length of a user-entered sentence without including the newline character. It demonstrates basic string manipulation, dynamic memory allocation, and array traversal.
